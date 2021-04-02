@@ -2,14 +2,45 @@ module.exports = {
   docs: [
     {
       type: 'category',
-      label: 'Docusaurus Tutorial',
+      label: 'Getting started',
       items: [
         'getting-started',
-        'create-a-page',
-        'create-a-document',
-        'create-a-blog-post',
-        'markdown-features',
+        'about',
+        'team',
+        'website',
+
         'thank-you',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Developing JavaScript in R',
+      items: [
+        'getting-started',
+        'about',
+        'team',
+        'website',
+        'thank-you',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Guides',
+      items: [
+        'getting-started',
+        'about',
+        'team',
+        'website',
+        'thank-you',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'About',
+      items: [
+        'about',
+        'team',
+        'website'
       ],
     },
   ],

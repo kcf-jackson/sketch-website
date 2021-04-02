@@ -1,31 +1,50 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: 'My Site',
-  tagline: 'The tagline of my site',
-  url: 'https://your-docusaurus-test-site.com',
+  title: 'Sketch',
+  tagline: 'An R-to-JavaScript transpiler written in R',
+  url: 'https://kcf-jackson.github.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'kcf-jackson', // Usually your GitHub org/user name.
+  projectName: 'sketch-website', // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'My Site',
-      logo: {
-        alt: 'My Site Logo',
-        src: 'img/logo.svg',
-      },
+      title: 'Sketch',
+      // logo: {
+      //   alt: 'My Site Logo',
+      //   src: 'img/logo.svg',
+      // },
       items: [
+        {
+          to: 'blog/', 
+          label: 'News', 
+          position: 'right'
+        },
         {
           to: 'docs/',
           activeBasePath: 'docs',
           label: 'Docs',
-          position: 'left',
+          position: 'right',
         },
-        {to: 'blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
+          to: 'tutorial/',
+          label: 'Tutorial',
+          position: 'right',
+        },
+        {
+          to: 'showcase/',
+          label: 'Showcase',
+          position: 'right',
+        },
+        {
+          to: 'api/',
+          label: 'API',
+          position: 'right',
+        },
+        {
+          href: 'https://github.com/kcf-jackson/sketch',
           label: 'GitHub',
           position: 'right',
         },
@@ -41,40 +60,48 @@ module.exports = {
               label: 'Getting Started',
               to: 'docs/',
             },
+            {
+              label: 'Guides',
+              to: 'docs/guides',
+            },
+            {
+              label: 'API',
+              to: 'api/',
+            },
+            {
+              label: 'About',
+              to: 'docs/about',
+            }
           ],
         },
         {
           title: 'Community',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: 'Tutorial',
+              to: "tutorial/"
             },
             {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
-            },
+              label: 'Showcase',
+              to: "showcase/"
+            }
           ],
         },
         {
           title: 'More',
           items: [
             {
-              label: 'Blog',
+              label: 'News',
               to: 'blog',
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/kcf-jackson/sketch',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © 2020-${new Date().getFullYear()} Chun Fung Kwok, Kate Saunders | Apache-2.0 Licensed | Built with Docusaurus`,
     },
   },
   presets: [
@@ -85,13 +112,13 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/',
+            'https://github.com/kcf-jackson/sketch-website/edit/master/',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/blog/',
+            'https://github.com/kcf-jackson/sketch-website/edit/master/blog/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
