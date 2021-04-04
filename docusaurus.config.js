@@ -30,6 +30,7 @@ module.exports = {
         },
         {
           to: 'tutorial/',
+          activeBasePath: 'tutorial',
           label: 'Tutorial',
           position: 'right',
         },
@@ -126,4 +127,20 @@ module.exports = {
       },
     ],
   ],
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'tutorial',
+        path: 'tutorial',
+        editUrl:
+            'https://github.com/kcf-jackson/sketch-website/edit/master/tutorial/',
+        routeBasePath: 'tutorial',
+        include: ['**/*.md', '**/*.mdx'], // Extensions to include.
+        docLayoutComponent: '@theme/DocPage',
+        docItemComponent: '@theme/DocItem',
+        sidebarPath: require.resolve('./sidebars_tutorial.js')
+      },
+    ],
+  ]
 };

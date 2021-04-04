@@ -5,33 +5,21 @@ module.exports = {
       label: 'Getting started',
       items: [
         'getting-started',
-        'about',
-        'team',
-        'website',
-
-        'thank-you',
+        'manage_assets_and_deployment'
       ],
     },
     {
       type: 'category',
       label: 'Developing JavaScript in R',
       items: [
-        'getting-started',
-        'about',
-        'team',
-        'website',
-        'thank-you',
+        'getting-started'
       ],
     },
     {
       type: 'category',
       label: 'Guides',
       items: [
-        'getting-started',
-        'about',
-        'team',
-        'website',
-        'thank-you',
+        'getting-started'
       ],
     },
     {
@@ -43,5 +31,5 @@ module.exports = {
         'website'
       ],
     },
-  ],
+  ]
 };
