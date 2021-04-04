@@ -1,0 +1,184 @@
+---
+output: github_document
+header-includes: |
+    \-\-\-  
+    title: Creative coding with p5.js  
+    slug: /  
+    \-\-\-
+---    
+
+```{r setup, include=FALSE}
+library(sketch)
+knitr::opts_chunk$set(eval = FALSE)
+knitr::knit_engines$set(sketch = eng_sketch)
+```
+
+Created: 2021-04-03.
+Modified: 2021-04-04.
+
+## Introduction
+
+In this article, we will do some basic creative coding together! We will create the following visualisation:
+
+```{r, echo = F, eval = TRUE}
+sketch::insert_sketch("creative_coding.R", 
+                      asset_tags = default_tags(local = FALSE),
+                      style = NULL,
+                      class = "border-none width-420 height-420")
+```
+
+The first step to create such visualisation is to describe the visualisation using primitive operations. In this case, the visualisation is simply a 2-dimensional array of circles with randomised size and color. This gives us a 2-step plan for the implementation:
+
+1. Draw a 2-dimensional grid of circles
+2. Randomise the color and size of the circles
+
+
+## Step 1 - Draw a 2-dimensional grid of circles
+
+We begin by loading the **p5.js** library, setting up the coordinates where the circles will locate, then drawing the circles on the screen. 
+
+Recall from the ["Getting Started"](/docs/) example that 
+
+- [`setup`](https://p5js.org/reference/#/p5/setup) is a function **p5** monitors and calls once when your application launches,
+- [`createCanvas`](https://p5js.org/reference/#/p5/createCanvas) is a function to create a canvas on the screen, and
+- [`circle`](https://p5js.org/reference/#/p5/circle) is a function to draw a circle on the screen.
+
+```{sketch, eval = TRUE, asset_tags = default_tags(local = FALSE), class = "border-none width-420 height-420", style = NULL}
+#! config(deparsers = default_2_deparsers())
+#! load_library("p5")
+
+# Setup
+WIDTH <- 400
+HEIGHT <- 400
+DIAMETER <- 10
+GRID_SIZE <- 40
+
+x_grid <- seq(0, WIDTH, step = DIAMETER)
+y_grid <- seq(0, HEIGHT, step = DIAMETER)
+
+setup <- function() {
+    createCanvas(WIDTH, HEIGHT)
+    for (x in x_grid) {
+        for (y in y_grid) {
+            circle(x, y, DIAMETER)
+        }
+    }
+    NULL
+}
+```
+
+Note that in the above we returned `NULL` at the end of `setup` because JavaScript does not allow returning assignments and control-flow statements (e.g. for-loop and if-statement). If you missed that, **sketch** would return `NULL` by default, and in this case the application would run fine; however, you will get a warning from **sketch**. In general, it is good practice to be explicit about what to return as there are situations where returning `NULL` may not be the intention.
+
+
+## Step 2 - Randomise the color and size of the circles
+
+Next, we randomise the color and size of the circles by
+
+- using `fill` to change the fill color of the circles,
+- using `stroke` to change the border color of the circles,
+- modifying the diameter to change the size of the circles.
+
+```{sketch, eval = TRUE, asset_tags = default_tags(local = FALSE), class="border-none width-420 height-420", style = NULL}
+#! config(deparsers = default_2_deparsers())
+#! load_library("p5")
+
+# Setup
+WIDTH <- 400
+HEIGHT <- 400
+DIAMETER <- 10
+GRID_SIZE <- 40
+
+x_grid <- seq(0, WIDTH, step = DIAMETER)
+y_grid <- seq(0, HEIGHT, step = DIAMETER)
+
+setup <- function() {
+    createCanvas(WIDTH, HEIGHT)
+    for (x in x_grid) {
+        for (y in y_grid) {
+            # Uniform distribution for RGB color
+            rgb_color = runif(3, 0, 255)
+            fill(rgb_color)    # fill color
+            stroke(rgb_color)  # border color
+            
+            # Square of normal distribution for the diameter
+            d <- DIAMETER * rnorm(1, 0, 0.4)^2
+            circle(x, y, d)
+        }
+    }
+    NULL
+}
+```
+
+## Extra!
+
+Let's add an extra feature that when we click on the canvas, it will regenerate another drawing! To do that, we wrap the drawing code into a function `draw_grid`, then add it into the [`mouseClicked`](https://p5js.org/reference/#/p5/mouseClicked) function.
+
+```{sketch, eval = TRUE, asset_tags = default_tags(local = FALSE), class="border-none width-420 height-420", style = NULL}
+#! config(deparsers = default_2_deparsers())
+#! load_library("p5")
+
+# Setup
+WIDTH <- 400
+HEIGHT <- 400
+DIAMETER <- 10
+GRID_SIZE <- 40
+
+x_grid <- seq(0, WIDTH, step = DIAMETER)
+y_grid <- seq(0, HEIGHT, step = DIAMETER)
+
+draw_grid <- function() {
+    for (x in x_grid) {
+        for (y in y_grid) {
+            # Uniform distribution for RGB color
+            rgb_color = runif(3, 0, 255)
+            fill(rgb_color)    # fill color
+            stroke(rgb_color)  # border color
+            
+            # Square of normal distribution for the diameter
+            d <- DIAMETER * rnorm(1, 0, 0.4)^2
+            circle(x, y, d)
+        }
+    }
+    NULL
+}
+
+setup <- function() {
+    createCanvas(WIDTH, HEIGHT)
+    draw_grid()
+}
+
+mouseClicked <- function() {
+    clear()  # remember to clear the previous drawing
+    draw_grid()
+}
+```
+
+Click to update!
+
+## Exercises
+
+Try creating the following visualisation (which updates upon click):
+
+```{r, echo = F, eval = TRUE}
+sketch::insert_sketch("creative_coding_exercise.R",
+                      asset_tags = default_tags(local = FALSE),
+                      style = NULL,
+                      class="border-none width-420 height-420")
+```
+
+
+## Credits / Reference
+
+I learned the above visualisations from [Matt DesLauriers](https://github.com/mattdesl/workshop-generative-art). Visit the repository for other useful resources!
+
+
+<link href="../css/docs-styles.css" rel="stylesheet"></link>
+
+```{r, echo = F, eval = F}
+# Do not use this block with docusaurus
+source("highlight_Rmd.R")
+highlight(query("pre code", 2), 17:24, include_source = T, 
+          style = NULL, class = "highlight")
+highlight(query("pre code", 3), c(13, 27, 31, 34:37), 
+          style = NULL, class = "highlight")
+```

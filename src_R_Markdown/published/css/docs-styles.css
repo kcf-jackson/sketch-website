@@ -1,0 +1,40 @@
+.border-none { border: none; }
+.rounded-lg	{ border-radius: 0.5rem; }
+
+.bg-white { background-color: white; }
+
+.width-420 { width: 420px; }
+.width-530 { width: 530px; }
+.width-600 { width: 600px; }
+.width-620 { width: 620px; }
+.width-48p { width: 48%; }
+.width-full { width: 100%; }
+
+.height-50 { height: 50px; }
+.height-90 { height: 90px; }
+.height-110 { height: 110px; }
+.height-120 { height: 120px; }
+.height-180 { height: 180px; }
+.height-220 { height: 220px; }
+.height-300 { height: 300px; }
+.height-330 { height: 330px; }
+.height-420 { height: 420px; }
+.height-620 { height: 620px; }
+.height-30vh { height: 30vh; }
+
+.mb-12 { margin-bottom: 12px; }
+.mb-18 { margin-bottom: 18px; }
+
+.flex { display: flex }
+.flex-1 { flex: 1 }
+.justify-center	{ justify-content: center; }
+.text-center	{ text-align: center; }
+
+.highlight { font-weight:bold; color:DarkBlue; }
+
+.docusaurus-highlight-code-line {
+  background-color: rgb(72, 77, 91);
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+}
