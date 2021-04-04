@@ -1,0 +1,64 @@
+---
+output: github_document
+header-includes: |
+    \-\-\-  
+    title: The DOM module  
+    \-\-\-
+---    
+
+```{r setup, include=FALSE}
+library(sketch)
+knitr::opts_chunk$set(eval = FALSE)
+knitr::knit_engines$set(sketch = eng_sketch)
+```
+
+
+The [DOM](https://en.wikipedia.org/wiki/Document_Object_Model) module is there to help user create HTML files and build interfaces.
+
+## Creation and Rendering
+
+The two functions for creating and rendering DOM elements are `dom` and `print_dom` (with alias `render`). The function signature of `dom` is `dom(tag, attr, ...)`, where
+
+- `tag` (character) is the name of a HTML tag,
+- `attr` (a named list) is the attributes of the tag, and
+- `...` may include additional tags that are inserted into the current tag.
+
+Here is an example:
+
+```{sketch, eval = TRUE, asset_tags = default_tags(local = FALSE), class="border-none width-420 height-90", style = NULL, deparsers = default_2_deparsers()}
+#! load_library("dom")
+x <- dom("div", list(innerText = "Hello World!"))
+print_dom(x)
+
+y <- dom("div", list(innerText = "Full-width color", style = "background: yellow;"))
+print_dom(y)
+
+z <- dom("div", list(),
+        dom("span", list(innerText = "Wrap-around color", style = "background: Gold;")))
+print_dom(z)
+```
+
+
+
+## Shorthand notation
+
+A shorthand notation has been included in `default_2_deparsers()`, and it resembles the syntax used by **shiny**. The tag name becomes a function call; all named arguments will be passed to `dom` as attributes, and the unnamed ones are passed as the additional tags to be included.
+
+
+```{sketch, eval = TRUE, asset_tags = default_tags(local = FALSE), class="border-none width-420 height-90", style = NULL, deparsers = default_2_deparsers()}
+#! load_library("dom")
+x <- div(innerText = "Hello World")
+print_dom(x)
+
+y <- div(innerText = "Full-width color", style = "background: yellow;")
+print_dom(y)
+
+z <- div(span(innerText = "Wrap-around color", style = "background: Gold;"))
+print_dom(z)
+```
+
+By the way, here is a reference for [HTML color names](https://www.w3schools.com/colors/colors_names.asp).
+
+
+<link href="../css/docs-styles.css" rel="stylesheet"></link>
+
