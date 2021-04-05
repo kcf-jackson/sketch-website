@@ -83,10 +83,15 @@ list_files("./published/css") %>%
     walk(~.x %T>% message() %>% file.copy(to = "../static/css/", overwrite = T))
 list_files("./published/img") %>%
     walk(~.x %T>% message() %>% file.copy(to = "../static/img/", overwrite = T))
+"./published/html/index.html" %T>%
+    message() %>%
+    file.copy(to = "../static/html/logo.html", overwrite = T)
 
 
 
 # Cleaning up
 message("Cleaning up HTML files")
 list_files("./published/docs", "*[.]html") %>%
+    walk(pipe(echo, file.remove))
+list_files("./published/tutorial", "*[.]html") %>%
     walk(pipe(echo, file.remove))
