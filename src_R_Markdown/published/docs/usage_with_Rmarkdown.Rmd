@@ -1,0 +1,64 @@
+---
+output: github_document
+header-includes: |
+    \-\-\-  
+    title: Usage with R Markdown documents  
+    \-\-\-
+---    
+
+```{r setup, include=FALSE}
+library(sketch)
+knitr::opts_chunk$set(eval = FALSE)
+knitr::knit_engines$set(sketch = eng_sketch)
+```
+
+## Embed a sketch R file in an R Markdown document
+
+Suppose the sketch R file is `sketch.R`, then it can be embedded in an RMD file using `sketch::insert_sketch` in a code chunk. This is particularly useful when you have a large application.
+
+```{r, eval=F}
+sketch::insert_sketch(file = "sketch.R", style = "width:530px; height:220px; border:none;")
+```
+
+```{r, eval=T, echo=F}
+sketch::insert_sketch(file = "sketch.R", style = NULL,
+                      asset_tags = default_tags(local = FALSE),
+                      class = "width-530 height-220 border-none")
+```
+
+
+
+## Use the sketch knitr engine
+
+**sketch** now has a knitr engine! To use it,
+
+- include `knitr::knit_engines$set(sketch = sketch::eng_sketch)` in the setup code chunk, and then
+- use ```` ```{sketch}``` ```` in place of ```` ```{r}``` ````.
+
+Concretely, the code chunks
+
+````
+`r ''````{r setup, include=FALSE}
+knitr::opts_chunk$set(eval = FALSE)
+knitr::knit_engines$set(sketch = sketch::eng_sketch)
+```
+
+`r ''````{sketch, debug = T, style = "width: 100%; height: 90px; border: none;"}
+print("'sketch' has its own knitr engine from version 1.0.5!")
+```
+````
+
+will produce
+
+```{sketch, debug=magrittr::set_attr(TRUE, "local", FALSE), style=NULL, class="border-none width-full height-90", eval=T, echo=F, asset_tags=default_tags(local = FALSE)}
+print("'sketch' has its own knitr engine from version 1.0.5!")
+```
+
+The engine supports the following options:
+
+- `rules`, `deparsers` to pass on to `source_r`,
+- `debug`, `asset_tags` to pass on to `compile_r`, and
+- `style` for styling the iframe, e.g., `style = "width: 100%; border: none;"` is a common option to use.
+
+
+<link href="../css/docs-styles.css" rel="stylesheet"></link>

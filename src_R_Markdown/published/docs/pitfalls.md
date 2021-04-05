@@ -18,18 +18,6 @@ x <- Array(1, 2, 3)   # Array is a function provided in JavaScript
 console::log(x[0])
 ```
 
-<iframe srcdoc="&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;meta charset=&quot;utf-8&quot;/&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;script src=&quot;https://cdn.jsdelivr.net/gh/kcf-jackson/sketch/inst/assets/console-log-div.js&quot;&gt;&lt;/script&gt;
-    &lt;script src=&quot;data:application/javascript;base64,eCA9IEFycmF5KDEsIDIsIDMpCmNvbnNvbGUubG9nKHhbMF0pCg==&quot;&gt;&lt;/script&gt;
-  &lt;/body&gt;
-&lt;/html&gt;" class="border-none rounded-lg bg-white width-full height-90">
-</iframe>
-
 ### 2. Undeclared variables are created in the global environment
 
 ``` sketch
@@ -40,18 +28,6 @@ f <- function() {
 console::log(f())
 console::log(x)        # 'x' shows up in the global!
 ```
-
-<iframe srcdoc="&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;meta charset=&quot;utf-8&quot;/&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;script src=&quot;https://cdn.jsdelivr.net/gh/kcf-jackson/sketch/inst/assets/console-log-div.js&quot;&gt;&lt;/script&gt;
-    &lt;script src=&quot;data:application/javascript;base64,ZiA9IGZ1bmN0aW9uKCkgewogICAgeCA9IDMKICAgIHJldHVybih4KQp9CmNvbnNvbGUubG9nKGYoKSkKY29uc29sZS5sb2coeCkK&quot;&gt;&lt;/script&gt;
-  &lt;/body&gt;
-&lt;/html&gt;" class="border-none rounded-lg bg-white width-full height-110">
-</iframe>
 
 While directly accessing and modifying global variables are not uncommon
 in JavaScript visualisations - as we will see when we use p5.js in the
@@ -66,18 +42,6 @@ f <- function() {
 }
 try(console::log(x))      # This will throw an error.
 ```
-
-<iframe srcdoc="&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;meta charset=&quot;utf-8&quot;/&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;script src=&quot;https://cdn.jsdelivr.net/gh/kcf-jackson/sketch/inst/assets/console-log-div.js&quot;&gt;&lt;/script&gt;
-    &lt;script src=&quot;data:application/javascript;base64,ZiA9IGZ1bmN0aW9uKCkgewogICAgbGV0IHgKICAgIHggPSAzCiAgICByZXR1cm4oeCkKfQp0cnkgewogICAgY29uc29sZS5sb2coeCkKfSBjYXRjaChlcnJvcikgewogICAgY29uc29sZS5sb2coZXJyb3IpCn0K&quot;&gt;&lt;/script&gt;
-  &lt;/body&gt;
-&lt;/html&gt;" class="border-none rounded-lg bg-white width-full height-90">
-</iframe>
 
 :::note
 
@@ -100,18 +64,6 @@ add2 <- function(x, y) {
 console::log(add2(3, 4))   # expects 7
 ```
 
-<iframe srcdoc="&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;meta charset=&quot;utf-8&quot;/&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;script src=&quot;https://cdn.jsdelivr.net/gh/kcf-jackson/sketch/inst/assets/console-log-div.js&quot;&gt;&lt;/script&gt;
-    &lt;script src=&quot;data:application/javascript;base64,YWRkID0gZnVuY3Rpb24oeCwgeSkgewogICAgeCArIHkKfQpjb25zb2xlLmxvZyhhZGQoMywgNCkpCmFkZDIgPSBmdW5jdGlvbih4LCB5KSB7CiAgICByZXR1cm4oeCArIHkpCn0KY29uc29sZS5sb2coYWRkMigzLCA0KSkK&quot;&gt;&lt;/script&gt;
-  &lt;/body&gt;
-&lt;/html&gt;" class="border-none rounded-lg bg-white width-full height-110">
-</iframe>
-
 <div class="note">
 
 If you use `default_2_deparsers()` (introduced in version 1.1.0), then
@@ -127,18 +79,6 @@ first <- function(x, y) {
 }
 console::log(first(y = 3, x = 1))   # the result is 3, not 1!
 ```
-
-<iframe srcdoc="&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;meta charset=&quot;utf-8&quot;/&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;script src=&quot;https://cdn.jsdelivr.net/gh/kcf-jackson/sketch/inst/assets/console-log-div.js&quot;&gt;&lt;/script&gt;
-    &lt;script src=&quot;data:application/javascript;base64,Zmlyc3QgPSBmdW5jdGlvbih4LCB5KSB7CiAgICByZXR1cm4oeCkKfQpjb25zb2xlLmxvZyhmaXJzdCgzLCAxKSkK&quot;&gt;&lt;/script&gt;
-  &lt;/body&gt;
-&lt;/html&gt;" class="border-none rounded-lg bg-white width-full height-90">
-</iframe>
 
 Note that since JavaScript does not use named argument, `y = 3` and
 `x = 1` are actually interpreted as assignments! Both assignments will
@@ -162,18 +102,6 @@ console::log(y)
 console::log(z)
 ```
 
-<iframe srcdoc="&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;meta charset=&quot;utf-8&quot;/&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;script src=&quot;https://cdn.jsdelivr.net/gh/kcf-jackson/sketch/inst/assets/console-log-div.js&quot;&gt;&lt;/script&gt;
-    &lt;script src=&quot;data:application/javascript;base64,eCA9IEFycmF5KDEsIDIsIDMpCnkgPSB4CnogPSBBcnJheSguLi54KQp5WzBdID0gOTk5CmNvbnNvbGUubG9nKHgpCmNvbnNvbGUubG9nKHkpCmNvbnNvbGUubG9nKHopCg==&quot;&gt;&lt;/script&gt;
-  &lt;/body&gt;
-&lt;/html&gt;" class="border-none rounded-lg bg-white width-full height-120">
-</iframe>
-
 ### 6. A browser session has a pre-populated namespace
 
 For example, the variables `document`, `window`, `location`, `var`,
@@ -188,17 +116,5 @@ for (b in Object::keys(window)) {
     if (window$hasOwnProperty(b)) console::log(b)
 }
 ```
-
-<iframe srcdoc="&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;meta charset=&quot;utf-8&quot;/&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;script src=&quot;https://cdn.jsdelivr.net/gh/kcf-jackson/sketch/inst/assets/console-log-div.js&quot;&gt;&lt;/script&gt;
-    &lt;script src=&quot;data:application/javascript;base64,Zm9yIChsZXQgYiBvZiBPYmplY3Qua2V5cyh3aW5kb3cpKSB7CiAgICBpZiAod2luZG93Lmhhc093blByb3BlcnR5KGIpKSBjb25zb2xlLmxvZyhiKQp9Cg==&quot;&gt;&lt;/script&gt;
-  &lt;/body&gt;
-&lt;/html&gt;" class="border-none rounded-lg bg-white width-full height-180">
-</iframe>
 
 <link href="../css/docs-styles.css" rel="stylesheet"></link>
