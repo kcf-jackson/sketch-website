@@ -22,4 +22,4 @@ To be productive developing JavaScript application in R, it is helpful to know s
 3. `$` and `::` in R maps to `.` in JavaScript
 
     -  In words, objects and namespaces in R (syntactically) map to objects in JavaScript.
-    - It is common to see JavaScript libraries organise their functions with an object. For instance, functions in mathjs are stored in the object called `math` and one calls a function `fun_1` by `math.fun_1`. To do that in R, simply load the library using the [#! header](/manage_assets_and_deployment), then call the function by the name `math::fun_1` or `math$fun_1`.
+    - It is common to see JavaScript libraries organise their functions with an object. For instance, functions in mathjs are stored in the object called `math` and one calls a function `fun_1` by `math.fun_1`. To do that in R, simply load the library using the [#! header](manage_assets_and_deployment), then call the function by the name `math::fun_1` or `math$fun_1`.

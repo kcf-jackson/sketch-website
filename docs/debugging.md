@@ -20,7 +20,7 @@ In .f(.x[[i]], ...) :
 You used the reserved word 'max' as the function argument name in the following expression:  
 function(max) { print(max) }
 
-This is a limitation of transpilation via static code analysis. To circumvent the issue, one could either rename the variable to some other names (say `max0` or `max_fun`) or switch off the rewriting rule for the word `max`. The detail of the latter approach is discussed in the [customisation](/customisation) page.
+This is a limitation of transpilation via static code analysis. To circumvent the issue, one could either rename the variable to some other names (say `max0` or `max_fun`) or switch off the rewriting rule for the word `max`. The detail of the latter approach is discussed in the [customisation](customisation) page.
 
 
 
