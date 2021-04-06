@@ -5,7 +5,14 @@ seq <- function(n) {
     Array(n)$fill(1)$map(lambda(element, index, index))
 }
 
-random <- function(max0, min0 = 0) {
+random <- function(a, b) {
+    if (b) {
+        min0 <- a
+        max0 <- b
+    } else {
+        min0 <- 0
+        max0 <- a
+    }
     min0 + (max0 - min0) * Math::random()
 }
 
@@ -15,7 +22,7 @@ ball <- R6Class("ball", list(
     y = NULL,
     r = NULL,
     growing = TRUE,
-    color = Array(random(160), random(160), random(216)),
+    color = Array(random(0, 196), random(0, 128), random(0, 224)),
 
     grow = function() {
         if (self$growing) { self$r <- self$r + 1 }
@@ -103,6 +110,7 @@ preload <- function() {
 
 setup <- function() {
     createCanvas(cw, ch)
+    # background(255, 153, 115)
     font_img$loadPixels()
     count = 0
     for (x in seq(font_img$width)) {
