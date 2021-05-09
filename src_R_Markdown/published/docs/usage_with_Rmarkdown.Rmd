@@ -50,7 +50,7 @@ print("'sketch' has its own knitr engine from version 1.0.5!")
 
 will produce
 
-```{sketch, debug=magrittr::set_attr(TRUE, "local", FALSE), style=NULL, class="border-none width-full height-90", eval=T, echo=F, asset_tags=default_tags(local = FALSE)}
+```{sketch, debug=magrittr::set_attr(TRUE, "local", FALSE), style=NULL, class="border-none width-full height-90 bg-white rounded-lg", eval=T, echo=F, asset_tags=default_tags(local = FALSE)}
 print("'sketch' has its own knitr engine from version 1.0.5!")
 ```
 

@@ -27,6 +27,9 @@
 .mb-12 { margin-bottom: 12px; }
 .mb-18 { margin-bottom: 18px; }
 
+.p-24 { padding: 24px; }
+
+.flex-row { flex-direction: row; }
 .flex { display: flex }
 .flex-1 { flex: 1 }
 .justify-center	{ justify-content: center; }

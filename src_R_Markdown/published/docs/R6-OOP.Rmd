@@ -1,0 +1,113 @@
+---
+output: github_document
+header-includes: |
+    \-\-\-  
+    title: Object-Oriented Programming  
+    \-\-\-
+---    
+
+## Objects as closures
+
+It can be succinct to implement an object using closures. Here is an excellent example from [Ross and Robert (1996), p.304](https://www.stat.auckland.ac.nz/~ihaka/downloads/R-paper.pdf):
+
+```{r, eval = F, echo = T}
+#! config(debug = T, deparsers = default_2_deparsers())
+account <- function(total) {
+    list(balance = function() total,
+         deposit = function(amount) total <<- total + amount,
+         withdraw = function(amount) total <<- total - amount)
+}
+
+Robert <- account(1000)
+Ross <- account(500)
+
+Robert$deposit(100)
+Ross$withdraw(150)
+
+print(Robert$balance())  # expect 1100
+print(Ross$balance())    # expect 350
+```
+
+```{sketch, debug=magrittr::set_attr(TRUE, "local", FALSE), style=NULL, class="border-none width-full height-110 bg-white rounded-lg", eval=T, echo=F, asset_tags=default_tags(local = FALSE)}
+#! config(debug = T, deparsers = default_2_deparsers())
+account <- function(total) {
+    list(balance = function() total,
+         deposit = function(amount) total <<- total + amount,
+         withdraw = function(amount) total <<- total - amount)
+}
+
+Robert <- account(1000)
+Ross <- account(500)
+
+Robert$deposit(100)
+Ross$withdraw(150)
+
+print(Robert$balance())  # expect 1100
+print(Ross$balance())    # expect 350
+```
+
+
+
+## R6 style of declaration
+
+The __sketch__ package supports object declaration using the R6 OOP syntax. Here is an example:
+
+```{r, eval = FALSE, echo = TRUE}
+reactive <- R6Class(
+    "reactive", 
+    public = list(
+        value_1 = NULL,
+        method_1 = function() {
+            print("Method 1 called")
+            print("    value_1: " %+% self$value_1)
+            print("    value_2: " %+% private$value_2)
+        },
+        initialize = function(x, y) {
+            self$value_1 <- x
+            private$value_2 <- y
+            return(self)
+        }
+    ), 
+    private = list(
+        value_2 = NULL
+    )
+)
+
+# Usage
+x <- reactive$new(1, 999)
+print("Fields and methods available to users: " %+% names(x))
+x$method_1()
+```
+
+
+```{sketch, debug=magrittr::set_attr(TRUE, "local", FALSE), style=NULL, class="border-none width-full height-130 bg-white rounded-lg", eval=T, echo=F, asset_tags=default_tags(local = FALSE)}
+reactive <- R6Class(
+    "reactive", 
+    public = list(
+        value_1 = NULL,
+        method_1 = function() {
+            print("Method 1 called")
+            print("    value_1: " %+% self$value_1)
+            print("    value_2: " %+% private$value_2)
+        },
+        initialize = function(x, y) {
+            self$value_1 <- x
+            private$value_2 <- y
+            return(self)
+        }
+    ), 
+    private = list(
+        value_2 = NULL
+    )
+)
+
+# Usage
+x <- reactive$new(1, 999)
+print("Fields and methods available to users: " %+% names(x))
+x$method_1()
+```
+
+
+
+
+<link href="../css/docs-styles.css" rel="stylesheet"></link>

@@ -58,7 +58,7 @@ will produce
     &lt;script src=&quot;https://cdn.jsdelivr.net/gh/kcf-jackson/sketch/inst/assets/console-log-div.js&quot;&gt;&lt;/script&gt;
     &lt;script src=&quot;data:application/javascript;base64,Ui5wcmludCgiJ3NrZXRjaCcgaGFzIGl0cyBvd24ga25pdHIgZW5naW5lIGZyb20gdmVyc2lvbiAxLjAuNSEiKQo=&quot;&gt;&lt;/script&gt;
   &lt;/body&gt;
-&lt;/html&gt;" class="border-none width-full height-90">
+&lt;/html&gt;" class="border-none width-full height-90 bg-white rounded-lg">
 </iframe>
 
 The engine supports the following options:

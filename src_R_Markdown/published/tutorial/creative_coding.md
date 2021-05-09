@@ -1,6 +1,9 @@
 ---  
 title: Creative coding with p5.js  
 slug: /  
+keywords:  
+- creative coding  
+- p5.js  
 ---
 
 Created: 2021-04-03. Modified: 2021-04-04.

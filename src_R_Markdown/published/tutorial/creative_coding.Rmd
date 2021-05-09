@@ -4,6 +4,9 @@ header-includes: |
     \-\-\-  
     title: Creative coding with p5.js  
     slug: /  
+    keywords:  
+        - creative coding  
+        - p5.js  
     \-\-\-
 ---    
 
