@@ -9,21 +9,21 @@
         <generator>https://github.com/jpmonette/feed</generator>
         <item>
             <title><![CDATA[Release sketch v1.1.0]]></title>
-            <link>https://kcf-jackson.github.io/blog/2021/04/30/release-1.1.0</link>
+            <link>https://kcf-jackson.github.io/sketch-website/blog/2021/04/30/release-1.1.0</link>
             <guid>Release sketch v1.1.0</guid>
             <pubDate>Fri, 30 Apr 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[This is a major release. Here is a list of major improvements (from v1.0.3):]]></description>
         </item>
         <item>
             <title><![CDATA[Sketch: Interactive Visualisations in R with a JavaScript Twist]]></title>
-            <link>https://kcf-jackson.github.io/blog/2021/03/28/welcome</link>
+            <link>https://kcf-jackson.github.io/sketch-website/blog/2021/03/28/welcome</link>
             <guid>Sketch: Interactive Visualisations in R with a JavaScript Twist</guid>
             <pubDate>Sun, 28 Mar 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[The fourth industrial revolution is digital, and there is now a deluge of data just waiting to be visualised - the question is does the R community have all the necessary tools to create amazing interactive visualisations?]]></description>
         </item>
         <item>
             <title><![CDATA[Release sketch v1.0.3 (CRAN acceptance)]]></title>
-            <link>https://kcf-jackson.github.io/blog/2020/10/08/release-1.0.3-cran</link>
+            <link>https://kcf-jackson.github.io/sketch-website/blog/2020/10/08/release-1.0.3-cran</link>
             <guid>Release sketch v1.0.3 (CRAN acceptance)</guid>
             <pubDate>Thu, 08 Oct 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[We are very happy to introduce the R package sketch for creating animated and interactive visualisation in R! Sketch lets users develop JavaScript-style visualisations using the R syntax by transpiling R code into JavaScript code. It is designed to help]]></description>

@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[8],{75:function(s){s.exports=JSON.parse('{"allTagsPath":"/sketch-website/blog/tags","slug":"r-consortium","name":"r-consortium","count":1,"permalink":"/sketch-website/blog/tags/r-consortium"}')}}]);
