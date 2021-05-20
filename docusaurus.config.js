@@ -41,6 +41,7 @@ module.exports = {
         },
         {
           to: 'api/',
+          activeBasePath: 'api',
           label: 'API',
           position: 'right',
         },
@@ -142,5 +143,19 @@ module.exports = {
         sidebarPath: require.resolve('./sidebars_tutorial.js')
       },
     ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'api',
+        path: 'api',
+        editUrl:
+            'https://github.com/kcf-jackson/sketch-website/edit/master/api/',
+        routeBasePath: 'api',
+        include: ['**/*.md', '**/*.mdx'], // Extensions to include.
+        docLayoutComponent: '@theme/DocPage',
+        docItemComponent: '@theme/DocItem',
+        sidebarPath: require.resolve('./sidebars_api.js')
+      },
+    ]
   ]
 };
