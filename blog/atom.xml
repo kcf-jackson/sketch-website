@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://kcf-jackson.github.io/blog</id>
+    <title>Sketch Blog</title>
+    <updated>2021-04-30T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://kcf-jackson.github.io/blog"/>
+    <subtitle>Sketch Blog</subtitle>
+    <icon>https://kcf-jackson.github.io/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Release sketch v1.1.0]]></title>
+        <id>Release sketch v1.1.0</id>
+        <link href="https://kcf-jackson.github.io/blog/2021/04/30/release-1.1.0"/>
+        <updated>2021-04-30T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[This is a major release. Here is a list of major improvements (from v1.0.3):]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Sketch: Interactive Visualisations in R with a JavaScript Twist]]></title>
+        <id>Sketch: Interactive Visualisations in R with a JavaScript Twist</id>
+        <link href="https://kcf-jackson.github.io/blog/2021/03/28/welcome"/>
+        <updated>2021-03-28T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[The fourth industrial revolution is digital, and there is now a deluge of data just waiting to be visualised - the question is does the R community have all the necessary tools to create amazing interactive visualisations?]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Release sketch v1.0.3 (CRAN acceptance)]]></title>
+        <id>Release sketch v1.0.3 (CRAN acceptance)</id>
+        <link href="https://kcf-jackson.github.io/blog/2020/10/08/release-1.0.3-cran"/>
+        <updated>2020-10-08T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[We are very happy to introduce the R package sketch for creating animated and interactive visualisation in R! Sketch lets users develop JavaScript-style visualisations using the R syntax by transpiling R code into JavaScript code. It is designed to help]]></summary>
+    </entry>
+</feed>
